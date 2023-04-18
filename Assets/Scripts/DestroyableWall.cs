@@ -5,7 +5,6 @@ using UnityEngine;
 public class DestroyableWall : MonoBehaviour
 {
     public DestroyableWall destroyableWall;
-    public GameObject tile;
     
     void Start()
     {
@@ -23,8 +22,7 @@ public class DestroyableWall : MonoBehaviour
         Explosion destroyable = collision.GetComponent<Explosion>();
         if (destroyable != null)
         {
-            Debug.Log("coucou");
-            Destroy(tile);
+            Destroy(gameObject);
         }
     }
 }

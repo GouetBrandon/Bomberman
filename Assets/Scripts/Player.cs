@@ -82,7 +82,9 @@ public class Player : MonoBehaviour
         if (!bombing)
         {
             bombing = true;
-            Instantiate(bomb, playerTransform.position,Quaternion.identity);
+            //J'ai pas réussi à dompter ce modulo
+            Instantiate(bomb, new Vector2(Mathf.Round(transform.position.x) ,Mathf.Round(transform.position.y)),Quaternion.identity);
+            //Instantiate(bomb, playerTransform.position,Quaternion.identity);
             StartCoroutine(BombReset());
         }
     }

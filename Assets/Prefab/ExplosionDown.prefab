@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 864518128349188154}
   - component: {fileID: 1581677025724254845}
   - component: {fileID: 8754746422424649492}
-  - component: {fileID: 8452973739517838410}
+  - component: {fileID: 715067307219326327}
   m_Layer: 0
   m_Name: ExplosionDown
   m_TagString: Untagged
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -657592092, guid: 1218324f3f7049b41b681a8a751ec9ea, type: 3}
-  m_Color: {r: 1, g: 0.8518008, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 3400083048891104223}
---- !u!58 &8452973739517838410
-CircleCollider2D:
+--- !u!61 &715067307219326327
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -112,6 +112,16 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0011353344, y: 0.22026026}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.25747302, y: 0.5594795}
+  m_EdgeRadius: 0

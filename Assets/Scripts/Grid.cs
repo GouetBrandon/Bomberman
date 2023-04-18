@@ -5,22 +5,20 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
 
-    public GameObject prefab;
+    public List<GameObject> walls;
 
     void Start()
     {
         
-        for (int x = 0; x < 50; x++)
+        foreach (GameObject gameObject in walls)
         {
-            for (int y = 0; y < 50; y++)
+            int i = Random.Range(0, 10);
+            if (i < 6)
             {
-                int j = Random.Range(0, 4);
-                if (j == 2)
-                {
-                    //Instantiate(prefab, new Vector2(x, y));
-                }
+                gameObject.SetActive(true);
+                
             }
-           
+            Debug.Log(i);
         }
 
     }
