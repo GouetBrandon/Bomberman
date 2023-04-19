@@ -98,8 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bomb: {fileID: 2677476546041769013}
+  megaBomb: {fileID: 2272601510839458034, guid: 38000749717b64d43815bac5f3633fd2, type: 3}
   explosionMiddle: {fileID: 3400083048891104223, guid: a9146b9cd70bfc844b8001fb8cbc4ec6, type: 3}
   explosionLeft: {fileID: 3400083048891104223, guid: ebd857d5c90f154418102d9f4ee2eef6, type: 3}
   explosionRight: {fileID: 3400083048891104223, guid: 4f9a7b5cdc30e7b4a852e4628d80e311, type: 3}
   explosionUp: {fileID: 3400083048891104223, guid: 54b7ad691b344114183fc5decb98a292, type: 3}
   explosionDown: {fileID: 3400083048891104223, guid: e827cdb3248168140ada21313d880f67, type: 3}
+  explosionHorizontal: {fileID: 3400083048891104223, guid: b562be69891d3ab4cad1dfe1c0f0eaf9, type: 3}
+  explosionVertical: {fileID: 3400083048891104223, guid: 97261015b7d05bd4596ce1cbbe04f062, type: 3}
+  isMegaBomb: 0

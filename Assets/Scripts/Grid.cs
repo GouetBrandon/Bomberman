@@ -18,7 +18,7 @@ public class Grid : MonoBehaviour
                 gameObject.SetActive(true);
                 
             }
-            Debug.Log(i);
+            
         }
 
     }
