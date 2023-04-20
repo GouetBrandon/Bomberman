@@ -7,8 +7,9 @@ using TMPro;
 public class UI : MonoBehaviour
 {
 
+    public ChangeScene changeScene;
     public GameObject gameMode;
-    public CanvasGroup winCanva;
+    public Canvas winCanva;
     public TMP_Text winText;
     public Player player1;
     public Player2 player2;
@@ -33,25 +34,28 @@ public class UI : MonoBehaviour
     void Update()
     {
 
-        if(gameMode.GetComponent<MultiplayerMode>().P1Win)
+        if (gameMode.GetComponent<MultiplayerMode>().P1Win)
         {
             winCanva.enabled = true;
             winText.text = "Player 1 Wins !";
+            StartCoroutine(EndOfGame());
         }
 
-        else if(gameMode.GetComponent<MultiplayerMode>().P2Win)
+        else if (gameMode.GetComponent<MultiplayerMode>().P2Win)
         {
+            winCanva.enabled = true;
             winText.text = "Player 2 Wins !";
+            StartCoroutine(EndOfGame());
         }
 
         player1HPSprite.sprite = player1HPArray[player1.GetComponent<PlayerManager>().playerHP];
         player2HPSprite.sprite = player2HPArray[player2.GetComponent<PlayerManager>().playerHP];
 
-        if(player1.hasMegaBomb)
+        if (player1.hasMegaBomb)
         {
             Player1MegaBombSprite.enabled = true;
         }
-        else if(!player1.hasMegaBomb)
+        else if (!player1.hasMegaBomb)
         {
             Player1MegaBombSprite.enabled = false;
         }
@@ -83,4 +87,13 @@ public class UI : MonoBehaviour
             Player2SpeedBoostSprite.enabled = false;
         }
     }
+
+    public IEnumerator EndOfGame()
+    {
+        yield return new WaitForSeconds(3);
+        changeScene.MoveToScene(0);
+
+    }
+
+    
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public GameObject gameMode;
+    public bool gameOver;
+    public GameObject currentGamemode;
     public InputManager inputManager;
     public Transform playerTransform;
     public Rigidbody2D rgbd;
@@ -22,7 +23,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!gameMode.GetComponent<MultiplayerMode>().gameOver)
+
+        if(currentGamemode.GetComponent<SoloGamemode>() != null)
+        {
+            gameOver = currentGamemode.GetComponent<SoloGamemode>().gameOver;
+        }
+
+        else if(currentGamemode.GetComponent<MultiplayerMode>() != null)
+        {
+            gameOver = currentGamemode.GetComponent<MultiplayerMode>().gameOver;
+        }
+
+
+        if (!gameOver)
         {
             if (hasSpeedBoost)
             {

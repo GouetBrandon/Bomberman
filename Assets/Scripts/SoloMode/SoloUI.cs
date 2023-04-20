@@ -6,7 +6,11 @@ using TMPro;
 
 public class SoloUI : MonoBehaviour
 {
+    public ChangeScene changeScene;
+    public GameObject gameMode;
     public Player player1;
+    public Canvas winCanva;
+    public TMP_Text winText;
 
     public Image player1HPSprite;
     public Sprite[] player1HPArray;
@@ -27,6 +31,19 @@ public class SoloUI : MonoBehaviour
 
     void Update()
     {
+        if (gameMode.GetComponent<SoloGamemode>().P1Win)
+        {
+            winCanva.enabled = true;
+            winText.text = "You Won !";
+            StartCoroutine(EndOfGame());
+        }
+
+        else if (gameMode.GetComponent<SoloGamemode>().gameOver)
+        {
+            winCanva.enabled = true;
+            winText.text = "You loose !";
+            StartCoroutine(EndOfGame());
+        }
 
         emeraldsText.text = player1.GetComponent<Emeralds>().emeraldsCount.ToString();
         emeraldsMaxText.text ="/" + player1.GetComponent<Emeralds>().emeraldsMax.ToString();
@@ -50,5 +67,10 @@ public class SoloUI : MonoBehaviour
         {
             Player1SpeedBoostSprite.enabled = false;
         }
+    }
+    public IEnumerator EndOfGame()
+    {
+        yield return new WaitForSeconds(3f);
+        changeScene.MoveToScene(0);
     }
 }

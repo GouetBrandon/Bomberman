@@ -79,7 +79,7 @@ public class Player2 : MonoBehaviour
                 player2Horizontal = false;
             }
 
-            if (Input.GetKey(KeyCode.Keypad0) == true)
+            if (Input.GetKey(KeyCode.RightControl) == true)
             {
                 PlaceBomb2();
 

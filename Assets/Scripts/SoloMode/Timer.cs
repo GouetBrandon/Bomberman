@@ -19,5 +19,10 @@ public class Timer : MonoBehaviour
     {
         time -= Time.deltaTime;
         textTime.text = "" + System.Math.Round(time);
+
+        if(time <= 0)
+        {
+            time = 0;
+        }
     }
 }
